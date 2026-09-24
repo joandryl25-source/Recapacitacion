@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -15,19 +17,27 @@ body {
 }
 
 
-/* HEADER */
+
+/* =========================
+   ENCABEZADO
+========================= */
 
 header {
     height: 75px;
     background: #111418;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 8%;
+
     position: sticky;
     top: 0;
+
     z-index: 1000;
 }
+
 
 .logo {
     color: white;
@@ -36,272 +46,572 @@ header {
     letter-spacing: 2px;
 }
 
+
 .logo span {
     color: #c7a35a;
 }
+
 
 nav {
     display: flex;
     gap: 30px;
 }
 
+
 nav a {
     color: #d9d9d9;
     text-decoration: none;
+
     font-size: 14px;
+
     transition: 0.3s;
 }
+
 
 nav a:hover {
     color: #c7a35a;
 }
 
 
-/* HERO */
+nav a.activo {
+    color: #c7a35a;
+}
+
+
+
+/* =========================
+   PORTADA
+========================= */
 
 .hero {
     min-height: 560px;
+
     background: #181c21;
+
     display: flex;
     align-items: center;
+
     padding: 80px 10%;
+
     position: relative;
     overflow: hidden;
 }
 
+
 .hero::after {
     content: "206";
+
     position: absolute;
+
     right: 7%;
     bottom: -80px;
+
     font-size: 300px;
+
     font-weight: bold;
+
     color: rgba(255, 255, 255, 0.025);
 }
 
+
 .hero-contenido {
     max-width: 700px;
+
     position: relative;
+
     z-index: 2;
 }
 
+
 .etiqueta {
     color: #c7a35a;
+
     font-size: 13px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
+
     margin-bottom: 20px;
 }
 
+
 .hero h1 {
     color: white;
+
     font-size: 65px;
+
     line-height: 1.05;
+
     margin-bottom: 25px;
 }
 
+
 .hero p:not(.etiqueta) {
     color: #bfc3c8;
+
     font-size: 18px;
+
     line-height: 1.7;
+
     max-width: 600px;
 }
 
+
 .boton {
     display: inline-block;
+
     margin-top: 35px;
+
     background: #c7a35a;
+
     color: #111418;
+
     text-decoration: none;
+
     padding: 14px 25px;
+
     font-weight: bold;
+
     transition: 0.3s;
 }
 
+
 .boton:hover {
     background: #e0c47e;
+
     transform: translateY(-2px);
 }
 
 
-/* INTRODUCCIÓN */
+
+/* =========================
+   INTRODUCCIÓN
+========================= */
 
 .introduccion {
     max-width: 1050px;
+
     margin: auto;
+
     padding: 100px 30px;
+
     display: grid;
+
     grid-template-columns: 100px 1fr;
+
     gap: 35px;
 }
 
+
 .numero {
     color: #c7a35a;
+
     font-size: 15px;
+
     font-weight: bold;
+
     letter-spacing: 2px;
 }
+
 
 .introduccion h2,
 .titulo-seccion h2,
 .recordatorio h2 {
     font-size: 36px;
+
     margin-bottom: 20px;
 }
 
+
 .introduccion p:not(.numero) {
     color: #5f646b;
+
     font-size: 16px;
+
     line-height: 1.8;
+
     margin-bottom: 15px;
 }
 
 
-/* NORMAS */
+
+/* =========================
+   NORMAS
+========================= */
 
 .normas {
     background: white;
+
     padding: 100px 10%;
 }
 
+
 .titulo-seccion {
     max-width: 1050px;
+
     margin: auto;
+
     margin-bottom: 55px;
 }
+
 
 .titulo-seccion > p:last-child {
     color: #6c7178;
 }
 
+
+
+/* =========================
+   TARJETAS DE NORMAS
+========================= */
+
 .norma {
     max-width: 1050px;
+
     margin: 0 auto 35px;
+
     border: 1px solid #e1e3e6;
+
     background: #fafafa;
+
     display: grid;
+
     grid-template-columns: 100px 1fr;
+
     transition: 0.3s;
 }
 
+
 .norma:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
 }
+
 
 .numero-norma {
     background: #111418;
+
     color: #c7a35a;
+
     display: flex;
+
     justify-content: center;
+
     align-items: flex-start;
+
     padding-top: 35px;
+
     font-size: 20px;
+
     font-weight: bold;
 }
+
 
 .contenido-norma {
     padding: 35px 40px 40px;
 }
 
+
 .categoria {
     color: #9a7b39;
+
     font-size: 11px;
+
     font-weight: bold;
+
     letter-spacing: 2px;
 }
 
+
 .contenido-norma h3 {
     font-size: 27px;
+
     margin: 10px 0 18px;
 }
 
+
 .contenido-norma p {
     color: #5e6369;
+
     line-height: 1.7;
+
     margin-bottom: 18px;
 }
 
+
 .contenido-norma h4 {
     margin: 25px 0 12px;
+
     font-size: 15px;
 }
+
 
 .contenido-norma ul {
     padding-left: 22px;
 }
 
+
 .contenido-norma li {
     color: #555a60;
+
     line-height: 1.7;
+
     margin-bottom: 10px;
 }
 
-.sancion {
-    margin-top: 25px;
-    padding: 17px 20px;
-    border-left: 4px solid #c7a35a;
-    background: #f0eee8;
-    color: #3f4144;
+
+
+/* =========================
+   LISTA DE PASOS
+========================= */
+
+.pasos {
+    padding-left: 25px !important;
+
+    counter-reset: pasos;
 }
 
 
-/* RECORDATORIO */
+.pasos li {
+    padding-left: 5px;
+
+    margin-bottom: 15px;
+}
+
+
+
+/* =========================
+   CAJA DE SANCIÓN
+========================= */
+
+.sancion {
+    margin-top: 25px;
+
+    padding: 17px 20px;
+
+    border-left: 4px solid #c7a35a;
+
+    background: #f0eee8;
+
+    color: #3f4144;
+
+    line-height: 1.6;
+}
+
+
+.sancion-roja {
+    border-left-color: #8f2f2f;
+
+    background: #f3eaea;
+}
+
+
+
+/* =========================
+   FORMATO DE CONTRATO
+========================= */
+
+.formato {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #111418;
+
+    border: 1px solid #2e3339;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.formato-titulo {
+    color: #c7a35a;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #33383e;
+}
+
+
+.formato p {
+    color: #e3e3e3;
+
+    margin-bottom: 12px;
+
+    line-height: 1.6;
+}
+
+
+.formato strong {
+    color: #c7a35a;
+}
+
+
+
+/* =========================
+   LÍMITE DE 24 HORAS
+========================= */
+
+.limite {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #181c21;
+
+    border: 1px solid #c7a35a;
+
+    text-align: center;
+}
+
+
+.limite span {
+    display: block;
+
+    color: #c7a35a;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.limite p {
+    color: #bfc3c8;
+
+    margin: 0;
+}
+
+
+
+/* =========================
+   RECORDATORIO
+========================= */
 
 .recordatorio {
     background: #111418;
+
     padding: 100px 30px;
+
     color: white;
 }
 
+
 .recordatorio-contenido {
     max-width: 850px;
+
     margin: auto;
 }
+
 
 .recordatorio h2 {
     margin-top: 12px;
 }
 
+
 .recordatorio p {
     color: #bfc3c8;
+
     line-height: 1.8;
+
     margin-bottom: 15px;
 }
 
+
 .mensaje {
     margin-top: 35px;
+
     border-top: 1px solid #33383e;
+
     padding-top: 25px;
+
     display: flex;
+
     align-items: center;
+
     gap: 20px;
 }
 
+
 .mensaje span {
     color: #c7a35a;
+
     font-size: 35px;
+
     font-weight: bold;
 }
+
 
 .mensaje p {
     margin: 0;
 }
 
 
-/* FOOTER */
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
 
 footer {
     background: #0b0d0f;
+
     color: #858a90;
+
     padding: 30px 8%;
+
     display: flex;
+
     justify-content: space-between;
+
     font-size: 12px;
 }
 
 
-/* RESPONSIVE */
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+.introduccion,
+.norma,
+.recordatorio {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.mostrar {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -309,46 +619,65 @@ footer {
         padding: 0 20px;
     }
 
+
     nav {
         gap: 12px;
     }
+
 
     nav a {
         font-size: 12px;
     }
 
+
     .hero {
         padding: 70px 25px;
     }
+
 
     .hero h1 {
         font-size: 45px;
     }
 
+
     .introduccion {
         grid-template-columns: 1fr;
+
         padding: 70px 25px;
     }
+
 
     .normas {
         padding: 70px 20px;
     }
 
+
     .norma {
         grid-template-columns: 1fr;
     }
 
+
     .numero-norma {
         padding: 15px;
+
         justify-content: flex-start;
     }
+
 
     .contenido-norma {
         padding: 30px 25px;
     }
 
+
+    .formato {
+        padding: 20px;
+    }
+
+
     footer {
         flex-direction: column;
+
         gap: 10px;
     }
+
 }
