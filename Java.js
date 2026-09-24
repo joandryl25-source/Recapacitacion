@@ -1,24 +1,26 @@
-// Animación sencilla al aparecer las secciones
-
 const secciones = document.querySelectorAll(
     ".introduccion, .norma, .recordatorio"
 );
 
-const observador = new IntersectionObserver((entradas) => {
 
-    entradas.forEach((entrada) => {
+const observador = new IntersectionObserver(
+    (entradas) => {
 
-        if (entrada.isIntersecting) {
+        entradas.forEach((entrada) => {
 
-            entrada.target.classList.add("mostrar");
+            if (entrada.isIntersecting) {
 
-        }
+                entrada.target.classList.add("mostrar");
 
-    });
+            }
 
-}, {
-    threshold: 0.15
-});
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
 
 
 secciones.forEach((seccion) => {
@@ -28,23 +30,47 @@ secciones.forEach((seccion) => {
 });
 
 
-// Agregar el efecto de aparición
 
-const estilo = document.createElement("style");
+/* =========================
+   NAVEGACIÓN
+========================= */
 
-estilo.innerHTML = `
-    .introduccion,
-    .norma,
-    .recordatorio {
-        opacity: 0;
-        transform: translateY(25px);
-        transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+const enlaces = document.querySelectorAll("nav a");
 
-    .mostrar {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
 
-document.head.appendChild(estilo);
+enlaces.forEach((enlace) => {
+
+    enlace.addEventListener("click", () => {
+
+        enlaces.forEach((item) => {
+
+            item.classList.remove("activo");
+
+        });
+
+        enlace.classList.add("activo");
+
+    });
+
+});
+
+
+
+/* =========================
+   ANIMACIÓN DEL BOTÓN
+========================= */
+
+const boton = document.querySelector(".boton");
+
+
+boton.addEventListener("click", () => {
+
+    boton.style.transform = "scale(0.97)";
+
+    setTimeout(() => {
+
+        boton.style.transform = "";
+
+    }, 150);
+
+});
